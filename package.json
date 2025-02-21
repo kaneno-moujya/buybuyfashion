@@ -1,0 +1,36 @@
+{
+  "name": "buybuyfashion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
+  },
+  "scripts": {
+    "start": "pnpm -C apps/web run start",
+    "build": "pnpm -C apps/web run build",
+    "deploy": "pnpm -C apps/web rub deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "@commitlint/types": "^19.5.0",
+    "@types/eslint": "8.56.10",
+    "@types/node": "20.14.11",
+    "@typescript-eslint/eslint-plugin": "7.16.1",
+    "@typescript-eslint/parser": "7.16.1",
+    "eslint": "^9.20.1",
+    "eslint-plugin-qwik": "^1.12.0",
+    "lefthook": "^1.10.10",
+    "prettier": "3.3.3",
+    "typescript": "5.4.5"
+  },
+  "volta": {
+    "node": "23.8.0",
+    "pnpm": "10.4.1"
+  },
+  "packageManager": "pnpm@10.4.1"
+}

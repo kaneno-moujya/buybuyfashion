@@ -1,0 +1,12 @@
+no_tty: true
+pre-commit:
+ parallel: true
+ jobs:
+   - run: pnpm prettier -w {staged_files}
+     glob: "*.{js,ts,jsx,tsx}"
+   - run: pnpm dlx eslint {staged_files}
+     glob: "*.{js,ts,jsx,tsx}"
+commit-msg:
+ scripts:
+   commitlint.sh:
+     runner: bash
