@@ -1,7 +1,15 @@
-import {component$, useStore, $, useVisibleTask$, useTask$, useComputed$, useOnWindow} from "@builder.io/qwik";
-import {Link} from "@builder.io/qwik-city";
+import {
+  component$,
+  useStore,
+  $,
+  useVisibleTask$,
+  useTask$,
+  useComputed$,
+  useOnWindow,
+} from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import {css} from "@styled-system/css";
+import { css } from "@styled-system/css";
 
 interface Props {
   hoge?: number;
@@ -9,39 +17,40 @@ interface Props {
 
 export default component$((props: Props) => {
   const count = useStore({
-    number: 0
+    number: 0,
   });
 
   const style = css({
     color: {
       spOnly: "red",
-      pc: "blue"
+      pc: "blue",
     },
-    fontSize: "s"
-  })
+    fontSize: "s",
+  });
 
-  useOnWindow(["resize", "DOMContentLoaded"], $(() => {
-
-  }));
+  useOnWindow(
+    ["resize", "DOMContentLoaded"],
+    $(() => {}),
+  );
 
   const hoge = useComputed$(() => {
     return count.number + "秒";
-  })
+  });
 
   const handleClick = $(() => {
     count.number++;
-  })
+  });
 
   useVisibleTask$(() => {
     console.log("Mounted");
   });
 
-  useTask$(({track, cleanup}) => {
+  useTask$(({ track, cleanup }) => {
     track(() => count.number);
     console.log("Count up");
     cleanup(() => {
       console.log("unmounted");
-    })
+    });
   });
 
   return (
@@ -52,7 +61,9 @@ export default component$((props: Props) => {
         <br />
         Happy coding.
       </div>
-      <button type={"button"} onClick$={handleClick}>Count: {count.number}</button>
+      <button type={"button"} onClick$={handleClick}>
+        Count: {count.number}
+      </button>
       <p>{hoge.value}</p>
       <Link>hoge</Link>
     </>

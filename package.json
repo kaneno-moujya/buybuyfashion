@@ -9,7 +9,8 @@
   "scripts": {
     "start": "pnpm -C apps/web run start",
     "build": "pnpm -C apps/web run build",
-    "deploy": "pnpm -C apps/web rub deploy"
+    "deploy": "pnpm -C apps/web rub deploy",
+    "postinstall": "lefthook install"
   },
   "keywords": [],
   "author": "",

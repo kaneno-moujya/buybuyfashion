@@ -14,8 +14,8 @@ export default defineConfig({
 
   globalCss: {
     html: {
-      fontSize: "10px"
-    }
+      fontSize: "10px",
+    },
   },
 
   // Useful for theme customization
@@ -23,8 +23,8 @@ export default defineConfig({
     tokens: {
       colors: {},
       fontSizes: {
-        s: {value: "3rem"}
-      }
+        s: { value: "3rem" },
+      },
     },
     breakpoints: {
       sp: "0px",
