@@ -4,8 +4,10 @@ pre-commit:
  jobs:
    - run: pnpm prettier -w {staged_files}
      glob: "*.{js,ts,jsx,tsx}"
+     stage_fixed: true
    - run: pnpm dlx eslint {staged_files}
      glob: "*.{js,ts,jsx,tsx}"
+     stage_fixed: true
 commit-msg:
  scripts:
    commitlint.sh:
