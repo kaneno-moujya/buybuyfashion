@@ -11,8 +11,8 @@ interface Props {
 export default component$<Props>((props) => {
   const frameStyle = css({
     w: {
-      spOnly: `${Settings.design.sp.size}rem`,
-      pc: `${Settings.design.pc.size}rem`,
+      spOnly: "design.sp.size",
+      pc: "design.pc.size",
     },
     m: "0 auto",
     p: {

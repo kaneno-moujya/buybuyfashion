@@ -58,17 +58,6 @@ export default component$((props: Props) => {
   return (
     <>
       <Mainvisual />
-      <h1 class={style}>Hi 👋</h1>
-      <div>
-        Can't wait to see what you build with qwik!
-        <br />
-        Happy coding.
-      </div>
-      <button type={"button"} onClick$={handleClick}>
-        Count: {count.number}
-      </button>
-      <p>{hoge.value}</p>
-      <Link>hoge</Link>
     </>
   );
 });

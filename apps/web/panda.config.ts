@@ -21,12 +21,30 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
+    keyframes: {
+      ticker: {
+        "0%": { transform: "translate3d(0, 0, 0)" },
+        "100%": { transform: "translate3d(-50%, 0, 0)" },
+      },
+    },
     tokens: {
       colors: {},
       fonts: {
         ja: { value: `${Settings.font.family.ja}` },
         en1: { value: `${Settings.font.family.en1}` },
         en2: { value: `${Settings.font.family.en2}` },
+      },
+    },
+    semanticTokens: {
+      sizes: {
+        design: {
+          sp: {
+            size: { value: `${Settings.design.sp.size}rem` },
+          },
+          pc: {
+            size: { value: `${Settings.design.pc.size}rem` },
+          },
+        },
       },
     },
     breakpoints: {
