@@ -120,7 +120,7 @@ export default component$(() => {
         <span dangerouslySetInnerHTML={Text01} />
         <span dangerouslySetInnerHTML={Text01} />
       </div>
-      <div class="hoge">hogehoge</div>
+      <div class="hoge">bokeboke</div>
     </div>
   );
 });
