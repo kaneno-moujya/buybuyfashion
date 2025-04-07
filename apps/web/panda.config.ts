@@ -1,4 +1,5 @@
 import { defineConfig } from "@pandacss/dev";
+import Settings from "./src/config/settings";
 
 export default defineConfig({
   jsxFramework: "qwik",
@@ -13,22 +14,42 @@ export default defineConfig({
   exclude: [],
 
   globalCss: {
-    html: {
-      fontSize: "10px",
+    "*": {
+      boxSizing: "border-box",
     },
   },
 
   // Useful for theme customization
   theme: {
+    keyframes: {
+      ticker: {
+        "0%": { transform: "translate3d(0, 0, 0)" },
+        "100%": { transform: "translate3d(-50%, 0, 0)" },
+      },
+    },
     tokens: {
       colors: {},
-      fontSizes: {
-        s: { value: "3rem" },
+      fonts: {
+        ja: { value: `${Settings.font.family.ja}` },
+        en1: { value: `${Settings.font.family.en1}` },
+        en2: { value: `${Settings.font.family.en2}` },
+      },
+    },
+    semanticTokens: {
+      sizes: {
+        design: {
+          sp: {
+            size: { value: `${Settings.design.sp.size}rem` },
+          },
+          pc: {
+            size: { value: `${Settings.design.pc.size}rem` },
+          },
+        },
       },
     },
     breakpoints: {
       sp: "0px",
-      pc: "749px",
+      pc: `${Settings.breakpoint.lv1 + 1}px`,
     },
     extend: {},
   },
