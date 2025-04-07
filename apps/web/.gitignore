@@ -43,3 +43,6 @@ lerna-debug.log*
 
 # Panda CSS
 styled-system
+
+# Netlify
+.netlify
