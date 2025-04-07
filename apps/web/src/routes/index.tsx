@@ -11,6 +11,8 @@ import { Link } from "@builder.io/qwik-city";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { css } from "@styled-system/css";
 
+import Mainvisual from "../components/front_page/mainvisual";
+
 interface Props {
   hoge?: number;
 }
@@ -55,17 +57,7 @@ export default component$((props: Props) => {
 
   return (
     <>
-      <h1 class={style}>Hi 👋</h1>
-      <div>
-        Can't wait to see what you build with qwik!
-        <br />
-        Happy coding.
-      </div>
-      <button type={"button"} onClick$={handleClick}>
-        Count: {count.number}
-      </button>
-      <p>{hoge.value}</p>
-      <Link>hoge</Link>
+      <Mainvisual />
     </>
   );
 });
