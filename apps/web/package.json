@@ -1,0 +1,39 @@
+{
+  "name": "buybuyfushion-web",
+  "private": true,
+  "trustedDependencies": [
+    "sharp"
+  ],
+  "trustedDependencies-annotation": "Needed for bun to allow running install scripts",
+  "type": "module",
+  "scripts": {
+    "build": "qwik build",
+    "build.client": "vite build",
+    "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.server": "vite build -c adapters/netlify-edge/vite.config.ts",
+    "build.types": "tsc --incremental --noEmit",
+    "predeploy": "pnpm build",
+    "deploy": "netlify deploy --build",
+    "dev": "vite --mode ssr",
+    "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "fmt": "prettier --write .",
+    "fmt.check": "prettier --check .",
+    "prebuild.pandacss": "panda codegen --silent",
+    "prepare": "panda codegen",
+    "preview": "qwik build preview && vite preview --open",
+    "start": "vite --open --mode ssr",
+    "qwik": "qwik"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "^1.12.0",
+    "@builder.io/qwik-city": "^1.12.0",
+    "@builder.io/vite-plugin-macro": "~0.0.7",
+    "@netlify/edge-functions": "^2.0.0",
+    "@pandacss/dev": "^0.51.0",
+    "@repo/domain": "workspace:*",
+    "netlify-cli": "^15.0.0",
+    "undici": "*",
+    "vite": "5.3.5",
+    "vite-tsconfig-paths": "^4.2.1"
+  }
+}
